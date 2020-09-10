@@ -12,10 +12,13 @@ class Liste:
     
     def add(self, element):
         next = self.list
-        while next[1] != None:
-            next = next[1]
-        next[1] = [element, None]
-
+        if next[0] == None:
+            next[0] = element
+        else: 
+            while next[1] != None:
+                next = next[1]
+            next[1] = [element, None]
+    
     def insert(self, index, element):
         next = self.list
         for _ in range(index-1):
