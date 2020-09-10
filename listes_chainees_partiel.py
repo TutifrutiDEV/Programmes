@@ -55,9 +55,11 @@ def modifier(tab, index, value):
     next[0] = value #Et donc on donne à l'index donné, la valeur donné
 
 def vider(tab):
-    tab = [None, None] #Je remet les valeurs initiales
-    return tab
-
+    n = longueur(tab)
+    for _ in range(n+1):
+        tab.pop() #Je remet les valeurs initiales
+    tab.append(None)
+    tab.append(None)
 #Programme principale
 
 ajouter(tab,5) #Ajoute 5 à la liste
@@ -73,5 +75,5 @@ supprimer_val(tab,2) #Supprime la première valeur correspondant à 2
 print(tab) #Affiche la liste
 modifier(tab, 0, 2)
 print(tab)
-tab = vider(tab)
+vider(tab)
 print(tab)
