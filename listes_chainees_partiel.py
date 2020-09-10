@@ -34,8 +34,8 @@ def longueur(tab):
 def supprimer_ind(tab, index):
 	next = tab #On lui donne la valeur de la liste
 	if index == 0:
-		next[0] = next[1][0]
-		next[1] = next[1][1]
+		next[0] = next[1][0] #Il prend la premier valeur du prochain tableau
+		next[1] = next[1][1] #Il prend le reste des autres tableau
 	else:
 		for _ in range(index-1): #On continue jusqu'à l'index-1 donné pour avoir le tableau juste avant celui de l'index
 			next = next[1] #A chaque fois on prend le tableau suivant
@@ -43,10 +43,10 @@ def supprimer_ind(tab, index):
 
 def supprimer_val(tab, valeur):
     next = tab #On lui donne la valeur de la liste
-    while next[0] != valeur:
-        old = next
-        next = next[1]
-    old[1] = next[1]
+    while next[0] != valeur: #Tant que le valeur du tableau ne correspond pas à celle donner
+        old = next #On garde une variable contenant le tableau précédent
+        next = next[1] #A chaque fois on prend le tableau suivant
+    old[1] = next[1] #On remplace le tableau par le nouveau
 
 def modifier(tab, index, value):
     next = tab #On lui donne la valeur de la liste
@@ -55,10 +55,10 @@ def modifier(tab, index, value):
     next[0] = value #Et donc on donne à l'index donné, la valeur donné
 
 def vider(tab):
-    n = longueur(tab)
+    n = longueur(tab) #On prend la taille d'un tableau
     for _ in range(n+1):
         tab.pop() #Je remet les valeurs initiales
-    tab.append(None)
+    tab.append(None) #On apprend 2x None
     tab.append(None)
 #Programme principale
 
@@ -73,7 +73,7 @@ supprimer_ind(tab,1) #Supprime la valeur à l'index 1
 print(tab) #Affiche la liste
 supprimer_val(tab,2) #Supprime la première valeur correspondant à 2
 print(tab) #Affiche la liste
-modifier(tab, 0, 2)
-print(tab)
-vider(tab)
-print(tab)
+modifier(tab, 0, 2) #On remplace la valeur de l'index 0 par 2
+print(tab) #Affiche la liste
+vider(tab) #On vide la liste
+print(tab) #Affiche la liste
