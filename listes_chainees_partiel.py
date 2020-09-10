@@ -56,6 +56,7 @@ def modifier(tab, index, value):
 
 def vider(tab):
     tab = [None, None] #Je remet les valeurs initiales
+    return tab
 
 ajouter(tab,5)
 ajouter(tab,2)
@@ -69,5 +70,6 @@ print(tab)
 supprimer_val(tab,2)
 print(tab)
 modifier(tab, 0, 2)
-vider(tab)
 print(tab)
+vider(tab)
+print(vider(tab))
