@@ -58,18 +58,20 @@ def vider(tab):
     tab = [None, None] #Je remet les valeurs initiales
     return tab
 
-ajouter(tab,5)
-ajouter(tab,2)
-print(tab)
-inserer(tab, 1, 3)
-print(tab)
-acceder(tab,1)
-print(longueur(tab))
-supprimer_ind(tab,1)
-print(tab)
-supprimer_val(tab,2)
-print(tab)
+#Programme principale
+
+ajouter(tab,5) #Ajoute 5 à la liste
+ajouter(tab,2) #Ajoute 2 à la liste
+print(tab) #Affiche la liste
+inserer(tab, 1, 3) #Insert 3 à l'index 1
+print(tab) #Affiche la liste
+acceder(tab,1) #Affiche la valeur à l'index 1
+print(longueur(tab)) #Affiche la longueur de la liste
+supprimer_ind(tab,1) #Supprime la valeur à l'index 1
+print(tab) #Affiche la liste
+supprimer_val(tab,2) #Supprime la première valeur correspondant à 2
+print(tab) #Affiche la liste
 modifier(tab, 0, 2)
 print(tab)
-vider(tab)
-print(vider(tab))
+tab = vider(tab)
+print(tab)
